@@ -30,5 +30,11 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'unifi_controller' => [
+        'url' => env('UNIFI_URL'),
+        'username' => env('UNIFI_USERNAME'),
+        'password' => env('UNIFI_PASSWORD'),
+        'version' => env('UNIFI_VERSION'),
+    ],
 
 ];
