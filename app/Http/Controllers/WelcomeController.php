@@ -18,7 +18,7 @@ class WelcomeController extends Controller
         $validated = $request->validate([
             'id' => ['required','mac_address'],
             'ap' => ['required','mac_address'],
-            't' => ['required', new ValidateTimeZoneRule()]
+            't' => ['required']
 
         ]);
 
