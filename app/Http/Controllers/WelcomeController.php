@@ -108,7 +108,7 @@ class WelcomeController extends Controller
         $auth_result = $unifi_connection->authorize_guest($mac, $duration, 1000, 3000, null, $ap_mac);
         if ($auth_result){
             session(['connected' => true]);
-            return redirect(route('wifi.connected'));
+            return view('connected');
         }
 
         return redirect(route('wifi.form'));
@@ -123,7 +123,7 @@ class WelcomeController extends Controller
      */
     public function show()
     {
-        dd('Estas conectado');
+        return view('connected');
     }
 
     public function error()
