@@ -26,7 +26,12 @@
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form class="space-y-6" action="#" method="POST">
+            <form class="space-y-6" action="{{ route('wifi.process') }}" method="POST">
+                @csrf
+                @method('post')
+                <input type="hidden" name="ap" value="">
+                <input type="hidden" name="id" value="">
+                <input type="hidden" name="ts" value="">
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700">Código de acceso</label>
                     <div class="mt-1">
@@ -53,7 +58,7 @@
                         <div class="w-full border-t border-gray-300"></div>
                     </div>
                     <div class="relative flex justify-center text-sm">
-                        <span class="bg-white px-2 text-gray-500">ID de sesion</span>
+                        <span class="bg-white px-2 text-gray-500">ID de sesión</span>
                     </div>
                 </div>
 

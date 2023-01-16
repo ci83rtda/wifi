@@ -20,5 +20,6 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
-Route::get('/guest/s/default', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
+Route::get('/guest/s/default', [App\Http\Controllers\WelcomeController::class, 'index'])->name('wifi.portal');
+Route::post('/wifi/process', [App\Http\Controllers\WelcomeController::class, 'store'])->name('wifi.process');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
