@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Rules\ValidateTimeZoneRule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use mysql_xdevapi\Exception;
 use UniFi_API\Client;
 
@@ -19,6 +20,9 @@ class WelcomeController extends Controller
         //wifi collect data and the send to the form
         if (session('connected', false)){
             return redirect(route('wifi.connected'));
+        }
+        if (!session('session_id',false)){
+            session(['session_id' => Str::ulid()]);
         }
         $validated = $request->validate([
             'id' => ['required','mac_address'],

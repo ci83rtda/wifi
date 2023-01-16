@@ -19,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
+Route::get('/', function (){
+    dd('no input provided');
+})->name('welcome');
 
 Route::get('/guest/s/default', [App\Http\Controllers\WelcomeController::class, 'index'])->name('wifi.initiator');
 
@@ -28,6 +30,8 @@ Route::get('/guest/s/default', [App\Http\Controllers\WelcomeController::class, '
 Route::post('/wifi/process', [App\Http\Controllers\WelcomeController::class, 'store'])->name('wifi.process');
 
 Route::get('/wifi/connected', [App\Http\Controllers\WelcomeController::class, 'show'])->name('wifi.connected');
+
+Route::get('/wifi/error', [App\Http\Controllers\WelcomeController::class, 'error'])->name('wifi.error');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
