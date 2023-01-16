@@ -33,9 +33,9 @@
                 <input type="hidden" name="id" value="">
                 <input type="hidden" name="ts" value="">
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Código de acceso</label>
+                    <label for="code" class="block text-sm font-medium text-gray-700">Código de acceso</label>
                     <div class="mt-1">
-                        <input id="email" name="email" type="text" placeholder="Ingresa un código de acceso aquí" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                        <input id="code" name="code" type="text" placeholder="Ingresa un código de acceso aquí" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                     </div>
                 </div>
 
