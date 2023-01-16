@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel 9 Vite 3 With Tailwind CSS</title>
+    <title>Servicio Hotspot</title>
 
     @vite('resources/js/app.js')
 </head>
