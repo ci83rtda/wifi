@@ -17,6 +17,14 @@ class WelcomeController extends Controller
      */
     public function index(Request $request)
     {
+//        [
+//            "ap" => "f4:92:bf:c6:f9:31",
+//            "id" => "46:41:da:fc:26:36",
+//            "t" => "1673814407",
+//            "url" => "http://www.msftconnecttest.com/redirect",
+//            "ssid" => "Wifii"
+//        ];
+
         //wifi collect data and the send to the form
         if (session('connected', false)){
             return redirect(route('wifi.connected'));
