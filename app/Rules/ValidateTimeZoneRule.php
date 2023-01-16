@@ -26,7 +26,10 @@ class ValidateTimeZoneRule implements Rule
      */
     public function passes($attribute, $value)
     {
-        $ts = Carbon::parse($value);
+        if (!$this->isValidTimeStamp($value)){
+            return false;
+        }
+        $ts = Carbon::createFromTimestamp($value)->toDateTimeString();
     }
 
     /**
@@ -37,5 +40,13 @@ class ValidateTimeZoneRule implements Rule
     public function message()
     {
         return 'La solicitud ha vencido';
+    }
+
+
+    public function isValidTimeStamp($timestamp)
+    {
+        return ((string) (int) $timestamp === $timestamp)
+            && ($timestamp <= PHP_INT_MAX)
+            && ($timestamp >= ~PHP_INT_MAX);
     }
 }
