@@ -52,6 +52,9 @@ class WelcomeController extends Controller
      */
     public function create()
     {
+        if (session('connected', false)){
+            return redirect(route('wifi.connected'));
+        }
         //wifi form show
         return view('welcome');
 
@@ -65,6 +68,9 @@ class WelcomeController extends Controller
      */
     public function store(Request $request)
     {
+        if (session('connected', false)){
+            return redirect(route('wifi.connected'));
+        }
 
         $validated = $request->validate([
             'code' => ['required'],
