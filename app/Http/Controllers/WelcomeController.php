@@ -118,4 +118,9 @@ class WelcomeController extends Controller
         dd('Estas conectado');
     }
 
+    public function error()
+    {
+        dd('error');
+    }
+
 }

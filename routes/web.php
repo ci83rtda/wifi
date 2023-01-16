@@ -25,7 +25,7 @@ Route::get('/', function (){
 
 Route::get('/guest/s/default', [App\Http\Controllers\WelcomeController::class, 'index'])->name('wifi.initiator');
 
-Route::get('/guest/s/default', [App\Http\Controllers\WelcomeController::class, 'create'])->name('wifi.form');
+Route::get('/wifi/connect', [App\Http\Controllers\WelcomeController::class, 'create'])->name('wifi.form');
 
 Route::post('/wifi/process', [App\Http\Controllers\WelcomeController::class, 'store'])->name('wifi.process');
 
