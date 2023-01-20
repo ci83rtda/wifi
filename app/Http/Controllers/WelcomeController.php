@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\AcceptTermsRule;
 use App\Rules\ValidateTimeZoneRule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -73,13 +74,13 @@ class WelcomeController extends Controller
         }
 
         $validated = $request->validate([
-            'code' => ['required'],
-            'accept' => ['accepted'],
+            'code' => ['required','in:9025,9020'],
+            'accept' => [new AcceptTermsRule()],
         ]);
 
-        if ($validated['code'] != '9025'){
-            return redirect(route('wifi.form'));
-        }
+//        if ($validated['code'] != '9025'){
+//            return redirect(route('wifi.form'));
+//        }
 
         $mac = session('id');
 
