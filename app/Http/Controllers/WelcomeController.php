@@ -90,7 +90,7 @@ class WelcomeController extends Controller
         }
 
         $validated = $request->validate([
-            'code' => [new ValidateCodeRule(),'in:9025,9020'],
+            'code' => [new ValidateCodeRule(),'in:902525,902020'],
             'accept' => [new AcceptTermsRule()],
         ]);
 

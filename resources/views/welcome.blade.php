@@ -31,7 +31,7 @@
                 <div class="flex items-center justify-between">
                     <div class="flex items-center">
                         <input id="accept" name="accept" type="checkbox" value="true" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                        <label for="accept" class="ml-2 block text-sm text-gray-900">Acepto los <a class="text-blue-600" href="#">terminos de uso</a></label>
+                        <label for="accept" class="ml-2 block text-sm text-gray-900">Acepto los <a class="text-blue-600" href="#">terminos y condiciones de uso</a></label>
                     </div>
 
                 </div>
