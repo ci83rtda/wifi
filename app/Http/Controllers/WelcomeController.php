@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ConnectionsRequest;
 use App\Rules\AcceptTermsRule;
+use App\Rules\ValidateCodeRule;
 use App\Rules\ValidateTimeZoneRule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -30,14 +32,28 @@ class WelcomeController extends Controller
         if (session('connected', false)){
             return redirect(route('wifi.connected'));
         }
-        if (!session('session_id',false)){
-            session(['session_id' => Str::ulid()]);
-        }
+
         $validated = $request->validate([
             'id' => ['required','mac_address'],
             'ap' => ['required','mac_address'],
             't' => ['required'],
+            'ssid' => ['required']
         ]);
+
+        if (!session('session_id',false)){
+            $session = Str::ulid();
+            session(['session_id' => $session]);
+
+            ConnectionsRequest::create([
+                'device_mac' => $validated['id'],
+                'ap_mac' => $validated['ap'],
+                'ssid' => $validated['ssid'],
+                'useragent' => $request->header('user-agent'),
+                'ip' => $request->getClientIp(),
+            ]);
+
+        }
+
         session([
             'ap' => $validated['ap'],
             'id' => $validated['id'],
@@ -74,7 +90,7 @@ class WelcomeController extends Controller
         }
 
         $validated = $request->validate([
-            'code' => ['required','in:9025,9020'],
+            'code' => [new ValidateCodeRule(),'in:9025,9020'],
             'accept' => [new AcceptTermsRule()],
         ]);
 
