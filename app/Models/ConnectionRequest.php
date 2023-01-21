@@ -11,4 +11,6 @@ class ConnectionRequest extends Model
     use HasFactory, HasUlids;
 
     protected $guarded = [];
+
+    protected $primaryKey = 'uuid';
 }
