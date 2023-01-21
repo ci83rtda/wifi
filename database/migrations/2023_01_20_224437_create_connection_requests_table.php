@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('conection_requests');
+        Schema::dropIfExists('connection_requests');
     }
 };

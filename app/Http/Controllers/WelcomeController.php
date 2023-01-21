@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ConnectionsRequest;
+use App\Models\ConnectionRequest;
 use App\Rules\AcceptTermsRule;
 use App\Rules\ValidateCodeRule;
 use App\Rules\ValidateTimeZoneRule;
@@ -44,7 +44,7 @@ class WelcomeController extends Controller
             $session = Str::ulid();
             session(['session_id' => $session]);
 
-            ConnectionsRequest::create([
+            ConnectionRequest::create([
                 'device_mac' => $validated['id'],
                 'ap_mac' => $validated['ap'],
                 'ssid' => $validated['ssid'],
