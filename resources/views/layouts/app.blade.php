@@ -8,7 +8,7 @@
     @vite('resources/js/app.js')
 </head>
 <body class="h-full">
-<div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8 px-20">
+<div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8 px-10">
     @yield('content')
 </div>
 </body>
