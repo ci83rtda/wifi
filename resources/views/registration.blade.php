@@ -7,7 +7,7 @@
         <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Bienvenido a nuestro servicio de Hotspot</h2>
         <p class="mt-2 text-center text-sm text-gray-600">
             <a href="{{ route('wifi.form') }}" class="font-medium text-indigo-600 hover:text-indigo-500">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 text-red-400">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                 </svg>
                 regresar
