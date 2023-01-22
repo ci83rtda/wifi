@@ -33,5 +33,7 @@ Route::get('/wifi/connected', [App\Http\Controllers\WelcomeController::class, 's
 
 Route::get('/wifi/error', [App\Http\Controllers\WelcomeController::class, 'error'])->name('wifi.error');
 
+Route::get('/registration', [App\Http\Controllers\WelcomeController::class, 'register'])->name('registration');
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

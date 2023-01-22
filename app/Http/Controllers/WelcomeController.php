@@ -90,7 +90,7 @@ class WelcomeController extends Controller
         }
 
         $validated = $request->validate([
-            'code' => [new ValidateCodeRule(),'in:902525,902020'],
+            'code' => [new ValidateCodeRule(),'exists:vouchers,code'],
             'accept' => [new AcceptTermsRule()],
         ]);
 
@@ -152,6 +152,11 @@ class WelcomeController extends Controller
     public function error()
     {
         dd('error');
+    }
+
+    public function register()
+    {
+        return view('registration');
     }
 
 }
