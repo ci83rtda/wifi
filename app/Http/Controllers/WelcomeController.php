@@ -40,9 +40,11 @@ class WelcomeController extends Controller
             'ssid' => ['required']
         ]);
 
+
+
         if (!session('session_id',false)){
-            $session = Str::ulid();
-            session(['session_id' => $session]);
+            $sessionCode = generateEasyToRememberNumber();
+            session(['session_id' => $sessionCode]);
 
             ConnectionRequest::create([
                 'device_mac' => $validated['id'],
@@ -50,6 +52,7 @@ class WelcomeController extends Controller
                 'ssid' => $validated['ssid'],
                 'useragent' => $request->header('user-agent'),
                 'ip' => $request->getClientIp(),
+                'code' => $sessionCode,
             ]);
 
         }

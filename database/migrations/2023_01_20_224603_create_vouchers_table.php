@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('vouchers', function (Blueprint $table) {
             $table->ulid();
-            $table->unsignedInteger('code')->unique();
-            $table->unsignedBigInteger('voucher_group_id');
+            $table->unsignedInteger('code')->unique()->index();
+            $table->unsignedBigInteger('voucher_group_id')->nullable();
             $table->text('note')->nullable();
             $table->unsignedInteger('upload') ;
             $table->unsignedInteger('download') ;
             $table->unsignedInteger('limit') ;
+            $table->unsignedTinyInteger('used')->default(0);
             $table->timestamps();
         });
     }

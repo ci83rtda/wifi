@@ -14,12 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('connection_requests', function (Blueprint $table) {
-            $table->ulid();
+            $table->ulid()->primary();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->text('ap_mac') ;
-            $table->text('device_mac') ;
+            $table->text('device_mac')->index() ;
             $table->text('ssid') ;
             $table->text('useragent') ;
             $table->text('ip') ;
+            $table->integer('code')->index() ;
+            $table->unsignedTinyInteger('verified')->default(0);
             $table->timestamps();
         });
     }
