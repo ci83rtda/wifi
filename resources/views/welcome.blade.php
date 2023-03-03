@@ -22,18 +22,17 @@
                 <input type="hidden" name="id" value="">
                 <input type="hidden" name="ts" value="">
                 <div>
-                    <label for="phone" class="block text-sm font-medium text-gray-700">Ingrese su numero telefonico celular</label>
+                    <label for="phone" class="block text-sm font-medium text-gray-700">Ingrese su número telefónico celular</label>
                     <div class="mt-1">
-                        <input id="phone" name="phone" type="tel" placeholder="Ingrese su numero telefonico celular aquí" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                        <input id="phone" name="phone" type="tel" placeholder="Ingrese su número telefónico celular aquí" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                     </div>
                 </div>
 
                 <div class="flex items-center justify-between">
                     <div class="flex items-center">
                         <input id="accept" name="accept" type="checkbox" value="true" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                        <label for="accept" class="ml-2 block text-sm text-gray-900">Acepto los <a class="text-blue-600" href="#">terminos y condiciones de uso</a></label>
+                        <label for="accept" class="ml-2 block text-sm text-gray-900">Acepto los <a class="text-blue-600" href="#">términos y condiciones de uso</a></label>
                     </div>
-
                 </div>
 
                 <div>
