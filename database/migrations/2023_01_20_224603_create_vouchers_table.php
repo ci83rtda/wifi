@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('note')->nullable();
             $table->unsignedInteger('upload') ;
             $table->unsignedInteger('download') ;
-            $table->unsignedInteger('limit') ;
+            $table->unsignedInteger('limit')->nullable() ;
             $table->unsignedTinyInteger('used')->default(0);
             $table->timestamps();
         });
