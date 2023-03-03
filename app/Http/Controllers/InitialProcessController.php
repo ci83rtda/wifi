@@ -80,11 +80,11 @@ class InitialProcessController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function create()
+    public function connected()
     {
-        //
+        return view('connected');
     }
 
     /**
@@ -225,7 +225,7 @@ class InitialProcessController extends Controller
         $auth_result = $unifi_connection->authorize_guest($mac, $duration, 1000, 3000, null, $ap_mac);
         if ($auth_result){
             session(['connected' => true]);
-            return view('connected');
+            return redirect(route('wifi.connected'));
         }
 
         return redirect(route('access.show_code'));

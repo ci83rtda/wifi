@@ -47,7 +47,7 @@ Route::name('access.')->prefix('access')->group(function () {
 
 Route::name('wifi.')->prefix('wifi')->group(function () {
 
-
+    Route::get('/connected', [App\Http\Controllers\WelcomeController::class, 'connected'])->name('connected');
 
 });
 
@@ -59,17 +59,17 @@ Route::name('wifi.')->prefix('wifi')->group(function () {
 
 
 
-Route::post('/wifi/process', [App\Http\Controllers\WelcomeController::class, 'store'])->name('wifi.process');
+//Route::post('/wifi/process', [App\Http\Controllers\WelcomeController::class, 'store'])->name('wifi.process');
 
-Route::get('/wifi/connected', [App\Http\Controllers\WelcomeController::class, 'show'])->name('wifi.connected');
+
 
 Route::get('/wifi/error', [App\Http\Controllers\WelcomeController::class, 'error'])->name('wifi.error');
 
-Route::get('/registration', [App\Http\Controllers\WelcomeController::class, 'register'])->name('registration');
+//Route::get('/registration', [App\Http\Controllers\WelcomeController::class, 'register'])->name('registration');
 
 
 
 
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
