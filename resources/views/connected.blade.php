@@ -14,3 +14,14 @@
     @include('layouts.notifications')
 
 @endsection
+
+
+@section('script')
+
+    <script type="text/javascript">
+        setTimeout(function(){
+            window.location.reload(1);
+        }, 5000);
+    </script>
+
+@endsection
