@@ -47,7 +47,7 @@ Route::name('access.')->prefix('access')->group(function () {
 
 Route::name('wifi.')->prefix('wifi')->group(function () {
 
-    Route::get('/connected', [App\Http\Controllers\WelcomeController::class, 'connected'])->name('connected');
+    Route::get('/connected', [App\Http\Controllers\InitialProcessController::class, 'connected'])->name('connected');
 
 });
 
